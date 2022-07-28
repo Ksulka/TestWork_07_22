@@ -5,7 +5,7 @@
 // При решении не рекомендуется пользоваться коллекциями, 
 // лучше обойтись исключительно массивами.
 
-void Print(string[] array)
+void Print(string[] array) //метод печати массива в консоль
 {
     int check = array.Length;
     for (int i = 0; i < check; i++)
@@ -17,8 +17,8 @@ void Print(string[] array)
 
 
 Console.WriteLine("Введитете любые 10 строк через Enter");
-string[] inputArr = new string[10];
-for (int i = 0; i < inputArr.Length; i++)
+string[] inputArr = new string[10]; // задаю исходный массив, решив что пусть он будет из 10 строк 
+for (int i = 0; i < inputArr.Length; i++) // ввод строк в массив с клавиатуры из консоли
 {
     inputArr[i] = Console.ReadLine();
 }
@@ -27,7 +27,7 @@ Console.WriteLine("Массив из строк, введеных вами:");
 
 Print(inputArr);
 int count = 0;
-for (int i = 0; i < inputArr.Length; i++)
+for (int i = 0; i < inputArr.Length; i++) //подсчет количества строк, удовл.условию задачи
 {
     if (inputArr[i].Length <= 3) count++;
 }
@@ -37,12 +37,12 @@ if (count == 0)
 }
 else
 {
-    string[] outputArr = new string[count];
+    string[] outputArr = new string[count]; //задаю итоговый массив
     for (int i = 0; i < inputArr.Length; i++)
     {
         if (inputArr[i].Length <= 3)
         {
-            outputArr[outputArr.Length - count] = inputArr[i];
+            outputArr[outputArr.Length - count] = inputArr[i]; //добавление строк из исходного массива в итоговый, удовл.усл.задачи
             count--;
         }
     }
